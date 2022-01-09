@@ -13,6 +13,15 @@ textarea {
   padding: 10px;
 }
 
+#currentDay {
+  font-size: 30px;
+  margin-top: 3rem;
+}
+
+.lead {
+  margin-top: 1.5rem;
+}
+
 .jumbotron {
   text-align: center;
   background-color: transparent;
