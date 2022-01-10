@@ -1,4 +1,5 @@
 var currentDay = $('#currentDay');
+console.log(currentDay);
 
 
 //Display Real Time
