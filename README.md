@@ -27,26 +27,13 @@ https://github.com/tirtasty/Daily-Planner.git
 ## Usage
 
 ** Once you launch the page, current day and time will appear (Sydney Time or based on location you are at). Each colour represent current situation which peach colour represent past, blue represent present, and green represent future time.
-![Home Page](./images/homepage.PNG)
+![Home Page](./Images/homepage.PNG)
 
-** And then it will continue with confirmation prompt that ask will you include lowercase letter.
-![Lowercase Letter Option](./images/lowercaseOption.PNG)
-
-** And then it will continue with confirmation prompt that ask will you include uppercase letter.
-![Uppercase Letter Option](./images/uppercaseOption.PNG)
-
-** And then it will continue with confirmation prompt that ask will you include symbol character.
-![Symbol Character Option](./images/symbolOption.PNG)
-
-** And then it will continue with confirmation prompt that ask will you include number.
-![Number Option](./images/numberOption.PNG)
-
-** Then after that you just need to generate password by click generate password button.
-![Generate Button](./images/generateButton.PNG)
-![The result](./images/result.PNG)
+** And the as its functionality, fill the coloumn based on what you are going to plan to each hour and simply click the save button on the right side of text area and when you think it is done you could delete by click the remove button to each coloumn you want to remove and it does remove on display and from local data.
+![Insert data, save and delete](./Images/insertdata.PNG)
 
 ** This the demo how the app will works
-![Demo of the apps work](./images/appDemo.gif)
+![Demo of the apps work](./Images/appDemo.gif)
 
 ---
 ## Contributors
