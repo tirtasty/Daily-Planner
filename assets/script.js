@@ -1,6 +1,7 @@
 //Global Scope Variable
 var currentDay = $('#currentDay');
 var dataInput = $('.form-control');
+var dataInside = document.getElementsByClassName("hourBlock")
 var saveButton = document.querySelectorAll(".saveBtn");
 console.log(saveButton)
 var realTime = moment();
@@ -25,14 +26,30 @@ function displayTime() {
   }
 setInterval(displayTime, 1000);
 
-var toDoList = function (event) {
-  var save = event.target.getAttribute('data-hour');
 
-  if (save == String) {
-    localStorage.setItem("daily todo", save);
-  }
-  console.log(save)
+// Saving Data Locally to each Column
+var saving = $(".saveBtn").on("click", function () {
+  console.log(saving);
+  var todo = $(this).siblings(".hourBlock").val(); // Select all the sibling that has same class
+  var time = $(this).parent().attr("data-hour");
+
+  localStorage.setItem("Hour-" + time, todo);
+});
+
+// Rendering data from local storage to display everytime reload
+function callData(){
+  $(".data1").val(localStorage.getItem("Hour-9"));
+  $(".data2").val(localStorage.getItem("Hour-10"));
+  $(".data3").val(localStorage.getItem("Hour-11"));
+  $(".data4").val(localStorage.getItem("Hour-12"));
+  $(".data5").val(localStorage.getItem("Hour-13"));
+  $(".data6").val(localStorage.getItem("Hour-14"));
+  $(".data7").val(localStorage.getItem("Hour-15"));
+  $(".data8").val(localStorage.getItem("Hour-16"));
+  $(".data9").val(localStorage.getItem("Hour-17"));
 }
+
+
 
 //Time Block Realtime
 var workHour = moment().startOf('day').add(9, "hours")
@@ -64,3 +81,5 @@ $(".4pm").text(clock16);
 var clock17 = workHour.add(1, "h").format('hA');
 $(".5pm").text(clock17);
 
+
+callData();
