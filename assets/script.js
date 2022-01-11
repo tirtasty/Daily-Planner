@@ -3,7 +3,6 @@ var currentDay = $('#currentDay');
 var dataInput = $('.form-control');
 var dataInside = document.getElementsByClassName("hourBlock")
 var saveButton = document.querySelectorAll(".saveBtn");
-console.log(saveButton)
 var realTime = moment();
 var inHour = moment().hour();
 
@@ -36,6 +35,16 @@ var saving = $(".saveBtn").on("click", function () {
   localStorage.setItem("Hour-" + time, todo);
 });
 
+// Remove Data from Local and Display
+var deleteData = $(".deleteBtn").on("click", function () {
+  console.log(saving);
+  var todo = $(this).siblings(".hourBlock").val(); // Select all the sibling that has same class
+  var time = $(this).parent().attr("data-hour");
+
+  localStorage.removeItem("Hour-" + time, todo);
+  location.reload()
+});
+
 // Rendering data from local storage to display everytime reload
 function callData(){
   $(".data1").val(localStorage.getItem("Hour-9"));
@@ -48,6 +57,8 @@ function callData(){
   $(".data8").val(localStorage.getItem("Hour-16"));
   $(".data9").val(localStorage.getItem("Hour-17"));
 }
+
+
 
 
 

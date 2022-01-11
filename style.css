@@ -89,14 +89,28 @@ textarea {
 .saveBtn {
 
   width: 90px;
-  border-left: 1px solid black;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
   background-color: #06aed5;
   color: white;
 }
 
 .saveBtn i:hover {
   font-size: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.deleteBtn {
+
+  width: 90px;
+  border-style: none;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: #d50678;
+  color: white;
+}
+
+.deleteBtn i:hover {
+  font-size: 40px;
   transition: all 0.3s ease-in-out;
 }
