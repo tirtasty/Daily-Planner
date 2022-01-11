@@ -1,11 +1,23 @@
 var currentDay = $('#currentDay');
 console.log(currentDay);
+var dataInput = $('.form-control');
+console.log(dataInput);
+
 
 
 //Display Real Time
 function displayTime() {
     var rightNow = moment().format('MMM DD, YYYY [at] hh:mm:ss a');
     currentDay.text(rightNow);
+    for (var i=0; i < dataInput.length; i++){
+      if (inHour > dataInput[i].dataset.hour){
+        dataInput[i].classList.add("past")
+      }else if(inHour == dataInput[i].dataset.hour){
+        dataInput[i].classList.add("present")
+      }else{
+        dataInput[i].classList.add("future")
+      }
+    }
   }
 
 setInterval(displayTime, 1000);
@@ -14,6 +26,8 @@ setInterval(displayTime, 1000);
 var realTime = moment();
 // Curent Time in Hour
 var timeHour = moment().hour();
+
+var inHour = 12;
 
 var workHour = moment().startOf('day').add(9, "hours")
 
