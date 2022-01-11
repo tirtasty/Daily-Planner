@@ -1,7 +1,10 @@
+//Global Scope Variable
 var currentDay = $('#currentDay');
-console.log(currentDay);
 var dataInput = $('.form-control');
-console.log(dataInput);
+var saveButton = document.querySelectorAll(".saveBtn");
+console.log(saveButton)
+var realTime = moment();
+var inHour = moment().hour();
 
 
 
@@ -9,6 +12,7 @@ console.log(dataInput);
 function displayTime() {
     var rightNow = moment().format('MMM DD, YYYY [at] hh:mm:ss a');
     currentDay.text(rightNow);
+    //Color Block Past, present and future based on realtime
     for (var i=0; i < dataInput.length; i++){
       if (inHour > dataInput[i].dataset.hour){
         dataInput[i].classList.add("past")
@@ -19,19 +23,20 @@ function displayTime() {
       }
     }
   }
-
 setInterval(displayTime, 1000);
 
-// Curent Time
-var realTime = moment();
-// Curent Time in Hour
-var timeHour = moment().hour();
+var toDoList = function (event) {
+  var save = event.target.getAttribute('data-hour');
 
-var inHour = 12;
-
-var workHour = moment().startOf('day').add(9, "hours")
+  if (save == String) {
+    localStorage.setItem("daily todo", save);
+  }
+  console.log(save)
+}
 
 //Time Block Realtime
+var workHour = moment().startOf('day').add(9, "hours")
+
 var clock9 = workHour.format('hA');
 $(".9am").text(clock9);
 
